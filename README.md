@@ -29,7 +29,7 @@ Thank you to the [Cordova Universal Links Plugin](https://github.com/nordnet/cor
 ```bash
 cordova plugin add ionic-plugin-deeplinks
 --variable URL_SCHEME=myapp --variable DEEPLINK_SCHEME=https --variable DEEPLINK_HOST=example.com
---variable ANDROID_PATH_PREFIX=/
+--variable ANDROID_PATH_PREFIX=/ --variable CUSTOM_SCHEME=example
 ```
 
 Fill in the appropriate values as shown below:
@@ -40,6 +40,8 @@ Fill in the appropriate values as shown below:
  * `ANDROID_PATH_PREFIX` - (optional): specify which path prefix our Android app should open from [more info](https://developer.android.com/guide/topics/manifest/data-element.html)
 
 (New in 1.0.13): If you'd like to support multiple hosts for Android, you can also set the variables `DEEPLINK_2_SCHEME`, `DEEPLINK_2_HOST`, `ANDROID_2_PATH_PREFIX` and optionally substitue `2` with 3, 4, and 5 to set more.
+
+* `CUSTOM_SCHEME` required on iOS to handle custom schem
 
 ## Handling Deeplinks in JavaScript
 
