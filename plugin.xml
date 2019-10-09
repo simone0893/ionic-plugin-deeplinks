@@ -77,6 +77,9 @@
 			<preference name="DEEPLINK_SCHEME" value="$DEEPLINK_SCHEME" />
 			<preference name="DEEPLINK_HOST" value="$DEEPLINK_HOST" />
 		</config-file>
+		<config-file target="*-Info.plist" parent="CustomScheme">
+          <string>$CUSTOM_SCHEME</string>
+      </config-file>
 
 		<config-file target="*-Info.plist" parent="CFBundleURLTypes">
 			<array>

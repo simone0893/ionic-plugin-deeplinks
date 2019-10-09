@@ -45,6 +45,7 @@
   _lastEvent = [self createResult:url];
 
   [self sendToJs];
+    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:CDVPluginHandleOpenURLNotification object:url]];
 
   return YES;
 }
@@ -52,11 +53,15 @@
 - (BOOL)checkUrl:(NSURL *)url {
   if(url == nil) return NO;
     
-  NSString* urlScheme = [[self.commandDelegate settings] objectForKey:@"url_scheme"];
+    NSBundle* mainBundle = [NSBundle mainBundle];
     
+  NSString* urlScheme = [mainBundle objectForInfoDictionaryKey:@"CustomScheme"];
+ 
+    NSLog(@"url scheme:%@",[url scheme]);
   if(urlScheme == nil) return NO;
     
   NSLog(@"url scheme:%@",[url scheme]);
+    NSLog(@"my url scheme:%@",urlScheme);
   NSLog(@"url host:%@",[url host]);
 
   if([[url scheme] isEqualToString:urlScheme]) {
