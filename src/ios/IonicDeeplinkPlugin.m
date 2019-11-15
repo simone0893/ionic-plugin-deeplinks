@@ -55,7 +55,7 @@
     
     NSBundle* mainBundle = [NSBundle mainBundle];
     
-  NSString* urlScheme = [mainBundle objectForInfoDictionaryKey:@"CustomScheme"];
+  NSString* urlScheme = [mainBundle objectForInfoDictionaryKey:@"MyScheme"];
  
     NSLog(@"url scheme:%@",[url scheme]);
   if(urlScheme == nil) return NO;
